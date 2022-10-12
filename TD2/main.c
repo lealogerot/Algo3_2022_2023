@@ -17,7 +17,7 @@ scanf("%s",(*e).prenom);
 printf ("Quel est votre code de Fonction ?\n");
 scanf("%d",(*e).codeFonction);
 printf ("Quel est votre salaire ?\n");
-scanf("%f",(*e).salaire);
+scanf("%f",(*e).salaire)
 };
 
 void afficheemploye (employe * e){
