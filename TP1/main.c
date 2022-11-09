@@ -32,3 +32,9 @@ int saisieClients(Tab t, int p, int * nbClients) {
     }
     return 1;
 }
+void modifierNom(Tab t, int nbClients, int i) {
+    if (i < nbClients) {
+        printf("ntrez le nouveau nom du client : ");
+        scanf("%s", t[i].nomClient);
+    }
+}
