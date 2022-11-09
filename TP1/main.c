@@ -17,3 +17,9 @@ void saisie(Client *c){
     printf("Nom client : ");
     scanf("%s", c->nomClient);
 }
+void ajouter(Client c, Tab t, int * nbClients) {
+    if (*nbClients < N) {
+        t[*nbClients] = c;
+        (*nbClients)++;
+    }
+}
