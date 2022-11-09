@@ -23,3 +23,12 @@ void ajouter(Client c, Tab t, int * nbClients) {
         (*nbClients)++;
     }
 }
+int saisieClients(Tab t, int p, int * nbClients) {
+    int i;
+    Client c;
+    for (i = 0; i < p; i++) {
+        saisie(&c);
+        ajouter(c, t, nbClients);
+    }
+    return 1;
+}
