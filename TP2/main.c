@@ -19,4 +19,14 @@ void afficher(int *t, int n, int i){
     printf("%d", t[0]);
     afficher(t+1, n, i+1);
 }
+int sum2Parameters (Tab t, int n)
+{
+    int res=0;
+    if (n>0)
+    {
+        res=t[n-1]+sum2Parameters(t,n-1);
+    }
+    return res;
+}
+
 
