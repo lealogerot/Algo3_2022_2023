@@ -44,4 +44,11 @@ int vSup(Tab t, int n ,int i,int v)
     }
     return res;
 }
-
+void decroissant(Tab t, int n ,int i)
+{
+    if (i>=0)
+    {
+        printf("t[%d]=%d\n",i,t[i]);
+        decroissant(t,n,i-1);
+    }
+}
