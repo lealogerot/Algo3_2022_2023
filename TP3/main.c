@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define N 10
+#include <time.h>
+#define N 1000
 
 typedef int Tab[N];
 
@@ -65,7 +66,10 @@ void triRapide(Tab t, int n)
 }
 
 int main()
-{   Tab t1, t2;
+{   double temps_debut, temps_fin;
+    int i;
+    double moyenne1 = 0, moyenne2 = 0;
+    Tab t1, t2;
     remplirTableau(t1, N);
     printf ("tableau t1 : ");
     afficheTableau(t1, N);
@@ -75,11 +79,17 @@ int main()
      printf("Tableau t1 non trié :\n");
     afficheTableau(t1, N);
     printf("Tableau t1 trié par sélection :\n");
+    temps_debut=(double)clock();
     triSelection(t1, N);
+    temps_fin = (double)clock();
     afficheTableau(t1, N);
+    printf("\nDuree de traitement : %f ms\n", 1000*(temps_fin - temps_debut)/CLOCKS_PER_SEC);
     printf("Tableau t2 trié par tri rapide :\n");
+    temps_debut=(double)clock();
     triRapide(t2, N);
+    temps_fin = (double)clock();
     afficheTableau(t2, N);
+    printf("\nDuree de traitement : %f ms\n", 1000*(temps_fin - temps_debut)/CLOCKS_PER_SEC);
     return 0;
 }
 
