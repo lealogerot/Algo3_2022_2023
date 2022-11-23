@@ -27,6 +27,20 @@ void copieTableau(Tab t1, Tab t2, int n)
         t2[i] = t1[i];
 }
 
+void triSelection(Tab t, int n)
+{
+    int i, j, min, tmp;
+    for (i = 0; i < n - 1; i++)
+    {
+        min = i;
+        for (j = i + 1; j < n; j++)
+            if (t[j] < t[min])
+                min = j;
+        tmp = t[i];
+        t[i] = t[min];
+        t[min] = tmp;
+    }
+}
 
 int main()
 {   Tab t1, t2;
@@ -34,7 +48,13 @@ int main()
     afficheTableau(t1, N);
     copieTableau(t1, t2, N);
     afficheTableau(t2, N);
+     printf("Tableau t1 non trié :\n");
+    afficheTableau(t1, N);
+    printf("Tableau t1 trié par sélection :\n");
+    triSelection(t1, N);
+    afficheTableau(t1, N);
     return 0;
 }
+
 
 
