@@ -63,6 +63,19 @@ void appartientClientFichier(char *nomClient, char *nomFichier) {
     fclose(f);
 }
 int main(){
-return 0 ;
+    Client c;
+    printf("id du client : ");
+    scanf("%d", &c.id);
+    printf("nom du client : ");
+    scanf("%s", c.nom);
+    ajouteClientFichier(c, "clients.txt");
+    afficheClientsFichier("clients.txt");
+    printf("\n nombre de clients : %d", nombreClientsFichier("clients.txt"));
+    printf("\n nom du client à rechercher : ");
+    char nomClient[10];
+    scanf("%s", nomClient);
+    appartientClientFichier(nomClient, "clients.txt");
+    return 0;
 }
+
 
